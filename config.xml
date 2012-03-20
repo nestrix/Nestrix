@@ -1,8 +1,8 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 <widget xmlns="http://www.w3.org/ns/widgets" xmlns:gap="http://phonegap.com/ns/1.0" id="nestrix" version="1.0">
 
-	<name>CrazyCow</name>
-	<description>Crazy Cow</description>
+	<name>FelBross</name>
+	<description>Fel in Bross land</description>
 	<author href="http://www.nestrixcorp.com" email="info@nestrixcorp.com">Nestrix</author>	<gap:platforms>
 		<gap:platform name="ios" />
 		<gap:platform name="android" minVersion="4" />
