@@ -54,40 +54,12 @@
 	<script src="c2runtime.js"></script>
 
     <script>
-		// Size the canvas to fill the browser viewport.
-		function cr_sizeCanvas()
-		{
-			var w = jQuery(window).width();
-			var h = jQuery(window).height();
-			
-			if (w === 0 || h === 0)
-				return;
-			
-			var canvas = document.getElementById("c2canvas");
-			
-			if (canvas)
-			{
-				canvas.width = w;
-				canvas.height = h;
-			
-				if (canvas.c2runtime)
-					canvas.c2runtime.setSize(w, h);
-			}
-			else if (window.c2runtime)
-				window.c2runtime.setSize(w, h);
-		}
-		
-		jQuery(window).resize(function() {
-			cr_sizeCanvas();
-		});
-		
-		document.addEventListener("deviceready", function ()
-		{
-			cr_sizeCanvas();
-			
-			// Create new runtime using the c2canvas
-			cr.createRuntime("c2canvas");
-		}, false);
+// Start the Construct 2 project running on window load.
+        jQuery(document).ready(function ()
+        {
+            // Create new runtime using the c2canvas
+               cr.createRuntime("c2canvas");
+        });
 	
     </script>
 </body> 
