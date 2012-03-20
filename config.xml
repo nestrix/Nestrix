@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
-<widget xmlns="http://www.w3.org/ns/widgets" xmlns:gap="http://phonegap.com/ns/1.0" id="git@git.phonegap.com:nestrix/89215_CrazyCow.git" version="1.0">
+<widget xmlns="http://www.w3.org/ns/widgets" xmlns:gap="http://phonegap.com/ns/1.0" id="nestrix" version="1.0">
 
 	<name>CrazyCow</name>
 	<description>Crazy Cow</description>
