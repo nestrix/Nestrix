@@ -29,7 +29,7 @@
 	
 	<!-- The canvas the project will render to.  If you change its ID, don't forget to change the
 	ID the runtime looks for in the jQuery events above (ready() and cr_sizeCanvas()). -->
-	<canvas id="c2canvas" width="480" height="320" oncontextmenu="return false;" onselectstart="return false;">
+	<canvas id="c2canvas" width="800" height="480" oncontextmenu="return false;" onselectstart="return false;">
 		<!-- This text is displayed if the visitor's browser does not support HTML5.
 		You can change it, but it is a good idea to link to a description of a browser
 		and provide some links to download some popular HTML5-compatible browsers. -->
@@ -54,12 +54,40 @@
 	<script src="c2runtime.js"></script>
 
     <script>
-// Start the Construct 2 project running on window load.
-        jQuery(document).ready(function ()
-        {
-            // Create new runtime using the c2canvas
-               cr.createRuntime("c2canvas");
-        });
+		// Size the canvas to fill the browser viewport.
+		function cr_sizeCanvas()
+		{
+			var w = jQuery(window).width();
+			var h = jQuery(window).height();
+			
+			if (w === 0 || h === 0)
+				return;
+			
+			var canvas = document.getElementById("c2canvas");
+			
+			if (canvas)
+			{
+				canvas.width = w;
+				canvas.height = h;
+			
+				if (canvas.c2runtime)
+					canvas.c2runtime.setSize(w, h);
+			}
+			else if (window.c2runtime)
+				window.c2runtime.setSize(w, h);
+		}
+		
+		jQuery(window).resize(function() {
+			cr_sizeCanvas();
+		});
+		
+		document.addEventListener("deviceready", function ()
+		{
+			cr_sizeCanvas();
+			
+			// Create new runtime using the c2canvas
+			cr.createRuntime("c2canvas");
+		}, false);
 	
     </script>
 </body> 
